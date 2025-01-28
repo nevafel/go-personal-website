@@ -1,3 +1,7 @@
+// Controller for minecraft mod CC:Tweaked
+// I decided to make it so I and my friend can create some bizzare stuff in minectaft :D
+// It turned out pretty well and was the first controller which I tested.
+
 package controllers
 
 import (
@@ -10,6 +14,7 @@ import (
 	"github.com/kaptinlin/jsonrepair"
 )
 
+// Json unmarshalled object from website.
 type Message struct {
 	Content  string `json:"content"`
 	Msg_type int    `json:"msg_type"`
@@ -43,6 +48,7 @@ func decodeMessage(r *http.Request) (Message, error) {
 	return messageRC, nil
 }
 
+// Garbage collection for messages.
 func clearQueue() {
 	if len(message_queue) <= 1 {
 		return

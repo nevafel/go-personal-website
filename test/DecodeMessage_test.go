@@ -15,19 +15,26 @@ func TestPostMessage(t *testing.T) {
 
 	test_value := `{"content":"banan","msg_type":10}`
 
+	// Creating a body for testing.
 	body := strings.NewReader(test_value)
+	// Creating request for controler.
 	req, err := http.NewRequest("POST", "/cctweaked", body)
 	if err != nil {
 		t.Fatal(err)
 	}
+	// Creating recored to read output from controller.
 	rr := httptest.NewRecorder()
 
+	// Pushing test data to controller
 	http.HandlerFunc(controllers.PostSendMessage).ServeHTTP(rr, req)
 
+	// Creating a pull request for controller
 	req, err = http.NewRequest("GET", "/cctweaked", nil)
 	if err != nil {
 		t.Fatal(err)
 	}
+
+	// Pulling processed data from controller
 	http.HandlerFunc(controllers.GetMessage).ServeHTTP(rr, req)
 
 	expected := `{banan 10}`
