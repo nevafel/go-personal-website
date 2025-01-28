@@ -1,0 +1,103 @@
+package styling
+
+/*
+In this file I write main CSS for all webpages.
+Also I store there some variables that I use a lot.
+Currently all elements are not sorted. 
+Be aware that class names in final html page will be random.
+*/
+
+
+var mainColor = "#ffb37f"
+var bgColor = "#272727"
+var bgVariation = "#1f1f1f" // Color simmilar to bg
+var contrastColor = "#92ffd1" // Contrast to mainColor
+var textColor = "#FFFFFF";
+
+css BlogFormInput() {
+    width: 70%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid { bgVariation };
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 13px;
+    resize: none;
+}
+
+css FileHeader() {
+    color: { mainColor };
+    text-align: center;
+}
+
+css Header() {
+    color: { mainColor };
+    text-align: left;
+}
+
+css HighlightText() {
+    color: { contrastColor };
+    font-weight: bold;
+}
+
+css Textcontainer() {
+    block-size: fit-content;
+    padding: 5px;
+    text-wrap: wrap;
+    margin: 10px;
+    color: { textColor };
+}
+
+css BlogContainer() {
+    border: 2px dashed gray;
+    margin: 20px;
+}
+
+css HelloContainer() {
+    height: fit-content;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: { textColor };
+    background: { bgVariation };
+}
+
+css BlockContainer() {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: { bgVariation };
+}
+
+css PostScriptum() {
+    text-align: center;
+    font-size: 12px;
+    color: { contrastColor };
+}
+
+css DefaultTable() {
+    border-collapse: collapse;
+    border: 1px solid;
+    color: { textColor };
+}
+
+css CenterPageContainer() {
+    padding: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+css CenterContainer() {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

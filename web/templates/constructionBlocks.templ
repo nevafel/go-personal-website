@@ -1,0 +1,60 @@
+/*
+Small block that I write to reuse in other templates to remove boilerplate.
+Syntax to reuse templates: @BasicPageBlock()
+*/
+package templates
+
+import "github.com/dixxe/personal-website/web/static/styling"
+
+// Use this block in every page. It contains dependecies and reduces boilerplate
+templ BasicPageBlock() {
+    <!DOCTYPE HTML>
+    <html style="background-color: #272727; ">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="icon" type="image/png" href="/static/icon.png" />
+
+        <style>
+
+        @font-face {
+            font-family: Disket-Mono;
+            src: url("/static/fonts/Disket-Mono-Bold.ttf");
+        }
+
+        @font-face {
+            font-family: Codec-pro;
+            src: url("/static/fonts/codec-pro.regular.ttf");
+        }
+
+        </style>
+
+        <title>dixxe's website</title>
+    </head>
+    <body style="padding: 0; margin: 0; font-family:Codec-pro">
+        
+    </body>
+    </html>
+}
+
+// Small styled line of links to my friends and contact information.
+templ UsefulLinks() {
+    <div class={ styling.BlockContainer(), styling.PostScriptum() }>
+
+    <p>
+        You can find source code of this website  
+        <a href="https://github.com/dixxe/personal-website">here.</a>
+    </p>
+
+    <p>Telegram - "@d1xxe"</p>
+    <p>Matrix - "@d1xxe:matrix.org"</p>
+
+    <p>My friends: 
+    <a href="https://t.me/LunfQwak1">Lunf</a>
+    <a href="https://t.me/Ovi4k">Madam_ovi</a>
+    </p>
+
+    </div>
+ 
+}

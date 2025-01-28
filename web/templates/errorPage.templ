@@ -1,0 +1,14 @@
+package templates
+
+import "github.com/dixxe/personal-website/web/static/styling"
+import "strconv"
+
+templ ErrorPage(code int, additional_info string) {
+    @BasicPageBlock()
+
+    <div class={ styling.Textcontainer(), styling.CenterPageContainer() }>
+        <h1 class={ styling.Header() }>Error { strconv.Itoa(code) }</h1>
+        <p> Something went wrong. {additional_info} </p>
+        <p class={ styling.PostScriptum() }> Go <a href="/">home</a> </p>
+    </div>
+}

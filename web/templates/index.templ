@@ -1,0 +1,71 @@
+/*
+Main page of website that shows on root.
+Contains useful information and links to other pages
+*/
+package templates
+
+import "github.com/dixxe/personal-website/web/static/styling"
+
+templ IndexPage() {
+    @BasicPageBlock()
+    
+    <div class={ styling.HelloContainer() }>
+        <p style="font-family: Disket-Mono; ">
+            <span>Greetings! I'm </span>
+            <br>
+            <span style="font-size: 60px; color: #ffb37f">d1xxe</span>
+            <br>
+            <span>and this is my </span>
+            <br>
+            <span style="font-size: 40px;">personal</span>
+            <span style="font-size: 40px;"> website</span>
+        </p>
+    </div>
+
+    <div class={ styling.Textcontainer(), styling.CenterContainer() } style="font-size: 20px;">
+
+        <h2 class={ styling.Header() } style="font-family: Disket-Mono;">
+            About me
+        </h2>
+
+        <p>
+            <span>I'm </span>
+            <span class={ styling.HighlightText() }> 16 </span>
+            <span>years old junior software engineer.</span>
+            <br>
+            <span>Born & live in Russia 🇷🇺 </span>
+            <br>
+            <span> I speak native Russian and English(B2)</span>
+        </p>
+
+        <p>
+            <span> I have skills in </span>
+            <span class={ styling.HighlightText() }>Go, Java, Rust, Nix</span>
+            <span>and</span>
+            <span class={ styling.HighlightText() }>Linux</span>
+        </p>
+
+        <p>
+            <span>I have a passion to learn new, complex things.</span>
+            <br>
+            <span>Currently I'm learning SQL, DBMS</span>
+        </p>
+        </div>
+
+        <hr>
+
+        <div class={ styling.CenterContainer(), styling.Textcontainer() } style="font-size: 20px;">
+        <p>I don't have any finished project yet :P</p>
+        </div>
+
+        <hr>
+
+    <div class={ styling.CenterContainer(), styling.Textcontainer() }>
+        <h1 class={ styling.Header() } style="font-family: Disket-Mono;">More stuff from me</h1>
+
+        <a href="/blog">Personal blog</a>
+
+    </div>
+    
+    @UsefulLinks()
+}
