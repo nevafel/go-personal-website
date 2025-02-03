@@ -43,7 +43,7 @@ func BasicPageBlock() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<!doctype HTML><html style=\"background-color: #272727; \"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><link rel=\"icon\" type=\"image/png\" href=\"/static/icon.png\"><style>\n\n        @font-face {\n            font-family: Disket-Mono;\n            src: url(\"/static/fonts/Disket-Mono-Bold.ttf\");\n        }\n\n        @font-face {\n            font-family: Codec-pro;\n            src: url(\"/static/fonts/codec-pro.regular.ttf\");\n        }\n\n        </style><title>dixxe's website</title></head><body style=\"padding: 0; margin: 0; font-family:Codec-pro\"></body></html>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<!doctype HTML><html style=\"background-color: #272727; \"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><link rel=\"icon\" type=\"image/png\" href=\"/static/icon.png\"><style>\n\n        @font-face {\n            font-family: Disket-Mono;\n            src: url(\"/static/fonts/Disket-Mono-Bold.ttf\");\n        }\n\n        @font-face {\n            font-family: Codec-pro;\n            src: url(\"/static/fonts/codec-pro.regular.ttf\");\n        }\n\n        </style><title>nullmax17's website</title></head><body style=\"padding: 0; margin: 0; font-family:Codec-pro\"></body></html>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -91,7 +91,7 @@ func UsefulLinks() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "\"><p>You can find source code of this website   <a href=\"https://gitlab.com/d1xxe/personal-website\">here.</a></p><p>Telegram - \"@d1xxe\"</p><p>Matrix - \"@d1xxe:matrix.org\"</p><p>My friends:  <a href=\"https://t.me/LunfQwak1\">Lunf</a> <a href=\"https://t.me/Ovi4k\">Madam_ovi</a></p></div>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "\"><p>You can find source code of this website   <a href=\"https://gitlab.com/nullmax17/personal-website\">here.</a></p><p>Telegram - \"@nullmax17\"</p><p>Signal - \"nullmax.17\"</p><p>My friends:  <a href=\"https://t.me/LunfQwak1\">Lunf</a> <a href=\"https://t.me/Ovi4k\">Madam_ovi</a></p></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
