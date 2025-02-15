@@ -15,11 +15,11 @@ Currently all elements are not sorted.
 Be aware that class names in final html page will be random.
 */
 
-var mainColor = "#ffb37f"
-var bgColor = "#272727"
-var bgVariation = "#1f1f1f"   // Color simmilar to bg
-var contrastColor = "#92ffd1" // Contrast to mainColor
-var textColor = "#FFFFFF"
+var mainColor = "#3B749F"
+var contrastColor = "#749F3B" // Contrast to mainColor
+var bgColor = "#1e1e1e"
+var bgVariation = "#1B1B1B" // Color simmilar to bg
+var textColor = "#dadada"
 
 func BlogFormInput() templ.CSSClass {
 	templ_7745c5c3_CSSBuilder := templruntime.GetBuilder()
@@ -88,8 +88,12 @@ func Textcontainer() templ.CSSClass {
 
 func BlogContainer() templ.CSSClass {
 	templ_7745c5c3_CSSBuilder := templruntime.GetBuilder()
-	templ_7745c5c3_CSSBuilder.WriteString(`border:2px dashed gray;`)
-	templ_7745c5c3_CSSBuilder.WriteString(`margin:20px;`)
+	templ_7745c5c3_CSSBuilder.WriteString(`font-size:16px;`)
+	templ_7745c5c3_CSSBuilder.WriteString(`font-family:Roboto;`)
+	templ_7745c5c3_CSSBuilder.WriteString(`margin-right:150px;`)
+	templ_7745c5c3_CSSBuilder.WriteString(`margin-left:150px;`)
+	templ_7745c5c3_CSSBuilder.WriteString(`position:relative;`)
+	templ_7745c5c3_CSSBuilder.WriteString(string(templ.SanitizeCSS(`color`, textColor)))
 	templ_7745c5c3_CSSID := templ.CSSID(`BlogContainer`, templ_7745c5c3_CSSBuilder.String())
 	return templ.ComponentCSSClass{
 		ID:    templ_7745c5c3_CSSID,
@@ -175,6 +179,58 @@ func CenterContainer() templ.CSSClass {
 	templ_7745c5c3_CSSBuilder.WriteString(`justify-content:center;`)
 	templ_7745c5c3_CSSBuilder.WriteString(`align-items:center;`)
 	templ_7745c5c3_CSSID := templ.CSSID(`CenterContainer`, templ_7745c5c3_CSSBuilder.String())
+	return templ.ComponentCSSClass{
+		ID:    templ_7745c5c3_CSSID,
+		Class: templ.SafeCSS(`.` + templ_7745c5c3_CSSID + `{` + templ_7745c5c3_CSSBuilder.String() + `}`),
+	}
+}
+
+func BlogHeading() templ.CSSClass {
+	templ_7745c5c3_CSSBuilder := templruntime.GetBuilder()
+	templ_7745c5c3_CSSBuilder.WriteString(`display:flex;`)
+	templ_7745c5c3_CSSBuilder.WriteString(`flex-grow:1;`)
+	templ_7745c5c3_CSSBuilder.WriteString(`height:30px;`)
+	templ_7745c5c3_CSSBuilder.WriteString(`position:relative;`)
+	templ_7745c5c3_CSSID := templ.CSSID(`BlogHeading`, templ_7745c5c3_CSSBuilder.String())
+	return templ.ComponentCSSClass{
+		ID:    templ_7745c5c3_CSSID,
+		Class: templ.SafeCSS(`.` + templ_7745c5c3_CSSID + `{` + templ_7745c5c3_CSSBuilder.String() + `}`),
+	}
+}
+
+func BlogHeadingLeft() templ.CSSClass {
+	templ_7745c5c3_CSSBuilder := templruntime.GetBuilder()
+	templ_7745c5c3_CSSBuilder.WriteString(`position:absolute;`)
+	templ_7745c5c3_CSSBuilder.WriteString(`display:flex;`)
+	templ_7745c5c3_CSSBuilder.WriteString(`flex-wrap:wrap;`)
+	templ_7745c5c3_CSSBuilder.WriteString(`top:0px;`)
+	templ_7745c5c3_CSSBuilder.WriteString(`left:0px;`)
+	templ_7745c5c3_CSSID := templ.CSSID(`BlogHeadingLeft`, templ_7745c5c3_CSSBuilder.String())
+	return templ.ComponentCSSClass{
+		ID:    templ_7745c5c3_CSSID,
+		Class: templ.SafeCSS(`.` + templ_7745c5c3_CSSID + `{` + templ_7745c5c3_CSSBuilder.String() + `}`),
+	}
+}
+
+func BlogHeadingRight() templ.CSSClass {
+	templ_7745c5c3_CSSBuilder := templruntime.GetBuilder()
+	templ_7745c5c3_CSSBuilder.WriteString(`position:absolute;`)
+	templ_7745c5c3_CSSBuilder.WriteString(`display:flex;`)
+	templ_7745c5c3_CSSBuilder.WriteString(`flex-wrap:wrap;`)
+	templ_7745c5c3_CSSBuilder.WriteString(`right:0px;`)
+	templ_7745c5c3_CSSBuilder.WriteString(`top:0px;`)
+	templ_7745c5c3_CSSID := templ.CSSID(`BlogHeadingRight`, templ_7745c5c3_CSSBuilder.String())
+	return templ.ComponentCSSClass{
+		ID:    templ_7745c5c3_CSSID,
+		Class: templ.SafeCSS(`.` + templ_7745c5c3_CSSID + `{` + templ_7745c5c3_CSSBuilder.String() + `}`),
+	}
+}
+
+func BubbleContainer() templ.CSSClass {
+	templ_7745c5c3_CSSBuilder := templruntime.GetBuilder()
+	templ_7745c5c3_CSSBuilder.WriteString(string(templ.SanitizeCSS(`background-color`, bgVariation)))
+	templ_7745c5c3_CSSBuilder.WriteString(`border-radius:10px;`)
+	templ_7745c5c3_CSSID := templ.CSSID(`BubbleContainer`, templ_7745c5c3_CSSBuilder.String())
 	return templ.ComponentCSSClass{
 		ID:    templ_7745c5c3_CSSID,
 		Class: templ.SafeCSS(`.` + templ_7745c5c3_CSSID + `{` + templ_7745c5c3_CSSBuilder.String() + `}`),

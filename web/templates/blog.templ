@@ -36,20 +36,32 @@ templ runMarked(markdown string) {
 }
 
 templ blogHeader() {
-    <h1 class={ styling.FileHeader() } style="font-family: Disket-Mono;">Блог дихуса</h1>
-    <p class={ styling.PostScriptum() }> Вернуться <a href="/">Домой</a> </p>
-    <hr>
+    <div class={ styling.BlogHeading() }>
+        <div class={styling.BubbleContainer(), styling.BlogHeadingLeft()}>
+            <p class={ styling.Header()} style="font-family: Disket-Mono;">
+                Блог нуля
+            </p>
+        </div>
+        <div></div>
+        <div></div>
+        <div class={styling.BubbleContainer(), styling.BlogHeadingRight()}>
+            <p class={ styling.Header() }> Вернуться <a href="/">Домой</a> </p>
+        </div>
+    </div>
+    
+
 }
 
 templ ShowPost(post repositories.Post){
     @BasicPageBlock()
     @blogHeader()
-    
-    <div class={ styling.BlogContainer(), styling.CenterContainer(), styling.Textcontainer() }>
-      <h1 style="font-family: Disket-Mono" class={ styling.Header(), styling.HighlightText() }>
-      {post.Header}
-      </h1>
-      <div id="post-content"></div>
+    <h1 style="font-family: Disket-Mono" class={ styling.FileHeader(), styling.HighlightText() }>
+    {post.Header}
+    </h1>
+    <div class={ styling.BlogContainer() }>
+
+      
+      <div class={} id="post-content"></div>
     </div>
     
     @runMarked(post.Content)

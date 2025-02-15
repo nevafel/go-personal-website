@@ -6,17 +6,8 @@ package templates
 
 import "github.com/dixxe/personal-website/web/static/styling"
 
-// Use this block in every page. It contains dependecies and reduces boilerplate
-templ BasicPageBlock() {
-    <!DOCTYPE HTML>
-    <html style="background-color: #272727; ">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <link rel="icon" type="image/png" href="/static/icon.png" />
-
-        <style>
+templ loadFontsBlock() {
+    <style>
 
         @font-face {
             font-family: Disket-Mono;
@@ -28,7 +19,25 @@ templ BasicPageBlock() {
             src: url("/static/fonts/codec-pro.regular.ttf");
         }
 
-        </style>
+        @font-face {
+            font-family: Roboto;
+            src: url("/static/fonts/Roboto-VariableFont.ttf");
+        }
+
+    </style>
+}
+
+// Use this block in every page. It contains dependecies and reduces boilerplate
+templ BasicPageBlock() {
+    <!DOCTYPE HTML>
+    <html style="background-color: #272727; ">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="icon" type="image/png" href="/static/icon.png" />
+
+        @loadFontsBlock()
 
         <title>nullmax17's website</title>
     </head>
