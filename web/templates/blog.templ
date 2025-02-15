@@ -74,10 +74,8 @@ templ ShowBlogPage(posts []repositories.Post) {
 
     for i := len(posts) - 1; i>=0; i-- {
         <div class={ styling.Textcontainer(), styling.BlogContainer() }>
-            <h1 style="font-family: Disket-Mono;">
-                <a class={ styling.Header() } href={ templ.URL(fmt.Sprintf("/post/%v", posts[i].Id)) }>
-                    {posts[i].Header}
-                </a>
+            <h1 class={ styling.Header() } style="font-family: Disket-Mono;">
+                {posts[i].Header}
             </h1>
             
             {{  
