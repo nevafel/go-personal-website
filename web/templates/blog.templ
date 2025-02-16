@@ -81,6 +81,10 @@ templ postBlockSeo(post repositories.Post) {
         <meta http-equiv="Content-Language" content="ru">
         <meta name="robots" content="index, follow">
 
+        <meta property="og:title" content={post.Header}>
+        <meta property="og:description" content={strings.Join(shortStr, " ")}>
+        <meta property="og:url" content={fmt.Sprintf("https://dixxe.top/post/%v", post.Id)}>
+
         <title>{post.Header}</title>
     </head>
     </html>
@@ -101,14 +105,18 @@ templ blogBlockSeo() {
         <meta http-equiv="Content-Language" content="ru">
         <meta name="robots" content="index, follow">
 
+        <meta property="og:title" content="Персональный блог nullmax17">
+        <meta property="og:description" content="Блог какого-то программиста в котором он делится своими знаниями.">
+        <meta property="og:url" content="https://dixxe.top/blog">
+
         <title>nullmax17's blog</title>
     </head>
     </html>
 }
 
 templ ShowPost(post repositories.Post) {
-    @blogHeader()
     @postBlockSeo(post)
+    @blogHeader()
 
     <div style="margin: 2%;">
         <h1 style="font-family: Disket-Mono" class={ styling.FileHeader(), styling.HighlightText() }>
