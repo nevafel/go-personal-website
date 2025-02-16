@@ -187,9 +187,8 @@ func CenterContainer() templ.CSSClass {
 
 func BlogHeading() templ.CSSClass {
 	templ_7745c5c3_CSSBuilder := templruntime.GetBuilder()
-	templ_7745c5c3_CSSBuilder.WriteString(`display:flex;`)
-	templ_7745c5c3_CSSBuilder.WriteString(`flex-grow:1;`)
-	templ_7745c5c3_CSSBuilder.WriteString(`height:30px;`)
+	templ_7745c5c3_CSSBuilder.WriteString(`margin:1%;`)
+	templ_7745c5c3_CSSBuilder.WriteString(`height:35px;`)
 	templ_7745c5c3_CSSBuilder.WriteString(`position:relative;`)
 	templ_7745c5c3_CSSID := templ.CSSID(`BlogHeading`, templ_7745c5c3_CSSBuilder.String())
 	return templ.ComponentCSSClass{

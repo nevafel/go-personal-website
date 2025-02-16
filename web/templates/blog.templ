@@ -27,6 +27,11 @@ templ runMarked(markdown string) {
     <script type="text/javascript">
 
         const markdown = JSON.parse(document.getElementById('md').textContent);
+        marked.use({
+            pedantic: false,
+            breaks: true,
+            gfm: true,
+        });
         document.getElementById('post-content').innerHTML =
         marked.parse( markdown );
 
@@ -52,12 +57,65 @@ templ blogHeader() {
 
 }
 
-templ ShowPost(post repositories.Post){
-    @BasicPageBlock()
+templ postBlockSeo(post repositories.Post) {
+
+    <!DOCTYPE HTML>
+    <html style="background-color: #272727; ">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="/static/icon.png" />
+        @LoadFontsBlock()
+
+        {{
+            // It's probably awfull practice, but here I calculate
+            // post size and make it smaller.. In frontend! Magic!
+            // Doing it again because seo!!
+            postWords := strings.Fields(post.Content)
+            postCap := int(math.Sqrt(float64(len(postWords))*5))
+            if postCap > 150 {postCap = 150}
+            shortStr := postWords[:postCap]
+        }}
+        <meta name="description" content={strings.Join(shortStr, " ")}>
+        <meta http-equiv="Content-Language" content="ru">
+        <meta name="robots" content="index, follow">
+
+        <title>{post.Header}</title>
+    </head>
+    </html>
+
+    
+}
+
+templ blogBlockSeo() {
+    <!DOCTYPE HTML>
+    <html style="background-color: #272727; ">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="/static/icon.png" />
+        @LoadFontsBlock()
+
+        <meta name="description" content="Блог nullmax17">
+        <meta http-equiv="Content-Language" content="ru">
+        <meta name="robots" content="index, follow">
+
+        <title>nullmax17's blog</title>
+    </head>
+    </html>
+}
+
+templ ShowPost(post repositories.Post) {
     @blogHeader()
-    <h1 style="font-family: Disket-Mono" class={ styling.FileHeader(), styling.HighlightText() }>
-    {post.Header}
-    </h1>
+    @postBlockSeo(post)
+
+    <div style="margin: 2%;">
+        <h1 style="font-family: Disket-Mono" class={ styling.FileHeader(), styling.HighlightText() }>
+        {post.Header}
+        </h1>
+    </div>
+    
     <div class={ styling.BlogContainer() }>
 
       
@@ -69,7 +127,7 @@ templ ShowPost(post repositories.Post){
 
 
 templ ShowBlogPage(posts []repositories.Post) {
-    @BasicPageBlock()
+    @blogBlockSeo()
     @blogHeader()
 
     for i := len(posts) - 1; i>=0; i-- {
