@@ -228,6 +228,8 @@ func BlogHeadingRight() templ.CSSClass {
 func BubbleContainer() templ.CSSClass {
 	templ_7745c5c3_CSSBuilder := templruntime.GetBuilder()
 	templ_7745c5c3_CSSBuilder.WriteString(string(templ.SanitizeCSS(`background-color`, bgVariation)))
+	templ_7745c5c3_CSSBuilder.WriteString(`padding:5px;`)
+	templ_7745c5c3_CSSBuilder.WriteString(`margin:5px;`)
 	templ_7745c5c3_CSSBuilder.WriteString(`border-radius:10px;`)
 	templ_7745c5c3_CSSID := templ.CSSID(`BubbleContainer`, templ_7745c5c3_CSSBuilder.String())
 	return templ.ComponentCSSClass{

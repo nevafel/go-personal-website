@@ -84,6 +84,7 @@ templ postBlockSeo(post repositories.Post) {
         <meta property="og:title" content={post.Header}>
         <meta property="og:description" content={strings.Join(shortStr, " ")}>
         <meta property="og:url" content={fmt.Sprintf("https://dixxe.top/post/%v", post.Id)}>
+        <meta property="og:type" content="website">
 
         <title>{post.Header}</title>
     </head>
@@ -108,6 +109,7 @@ templ blogBlockSeo() {
         <meta property="og:title" content="Персональный блог nullmax17">
         <meta property="og:description" content="Блог какого-то программиста в котором он делится своими знаниями.">
         <meta property="og:url" content="https://dixxe.top/blog">
+        <meta property="og:type" content="website">
 
         <title>nullmax17's blog</title>
     </head>

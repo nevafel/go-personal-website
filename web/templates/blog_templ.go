@@ -319,14 +319,14 @@ func postBlockSeo(post repositories.Post) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 17, "\"><title>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 17, "\"><meta property=\"og:type\" content=\"website\"><title>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var19 string
 		templ_7745c5c3_Var19, templ_7745c5c3_Err = templ.JoinStringErrs(post.Header)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `web/templates/blog.templ`, Line: 88, Col: 27}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `web/templates/blog.templ`, Line: 89, Col: 27}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var19))
 		if templ_7745c5c3_Err != nil {
@@ -369,7 +369,7 @@ func blogBlockSeo() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 20, "<meta name=\"description\" content=\"Блог nullmax17\"><meta http-equiv=\"Content-Language\" content=\"ru\"><meta name=\"robots\" content=\"index, follow\"><meta property=\"og:title\" content=\"Персональный блог nullmax17\"><meta property=\"og:description\" content=\"Блог какого-то программиста в котором он делится своими знаниями.\"><meta property=\"og:url\" content=\"https://dixxe.top/blog\"><title>nullmax17's blog</title></head></html>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 20, "<meta name=\"description\" content=\"Блог nullmax17\"><meta http-equiv=\"Content-Language\" content=\"ru\"><meta name=\"robots\" content=\"index, follow\"><meta property=\"og:title\" content=\"Персональный блог nullmax17\"><meta property=\"og:description\" content=\"Блог какого-то программиста в котором он делится своими знаниями.\"><meta property=\"og:url\" content=\"https://dixxe.top/blog\"><meta property=\"og:type\" content=\"website\"><title>nullmax17's blog</title></head></html>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -435,7 +435,7 @@ func ShowPost(post repositories.Post) templ.Component {
 		var templ_7745c5c3_Var24 string
 		templ_7745c5c3_Var24, templ_7745c5c3_Err = templ.JoinStringErrs(post.Header)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `web/templates/blog.templ`, Line: 123, Col: 20}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `web/templates/blog.templ`, Line: 125, Col: 20}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var24))
 		if templ_7745c5c3_Err != nil {
@@ -574,7 +574,7 @@ func ShowBlogPage(posts []repositories.Post) templ.Component {
 			var templ_7745c5c3_Var34 string
 			templ_7745c5c3_Var34, templ_7745c5c3_Err = templ.JoinStringErrs(posts[i].Header)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `web/templates/blog.templ`, Line: 144, Col: 32}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `web/templates/blog.templ`, Line: 146, Col: 32}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var34))
 			if templ_7745c5c3_Err != nil {
@@ -597,7 +597,7 @@ func ShowBlogPage(posts []repositories.Post) templ.Component {
 			var templ_7745c5c3_Var35 string
 			templ_7745c5c3_Var35, templ_7745c5c3_Err = templ.JoinStringErrs(strings.Join(shortStr, " "))
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `web/templates/blog.templ`, Line: 156, Col: 62}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `web/templates/blog.templ`, Line: 158, Col: 62}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var35))
 			if templ_7745c5c3_Err != nil {
