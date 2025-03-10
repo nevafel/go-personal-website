@@ -78,3 +78,12 @@ func GetMessage(w http.ResponseWriter, r *http.Request) {
 	}
 	fmt.Fprintln(w, message_queue[0])
 }
+
+func GetMessageBeta(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("content-type", "application/json")
+	if len(message_queue) == 0 {
+		message_queue = append(message_queue, Message{"no message accepted yet", 404})
+	}
+	json, _ := json.Marshal(message_queue[0])
+	fmt.Fprintln(w, string(json))
+}

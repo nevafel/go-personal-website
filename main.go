@@ -43,6 +43,8 @@ func main() {
 
 	r.Post("/cctweaked", controllers.PostSendMessage)
 	r.Get("/cctweaked", controllers.GetMessage)
+	r.Post("/cctweaked-beta", controllers.PostSendMessage)
+	r.Get("/cctweaked-beta", controllers.GetMessageBeta)
 
 	fs := http.FileServer(http.Dir("web/static"))
 	r.Handle("/static/*", http.StripPrefix("/static/", fs))
