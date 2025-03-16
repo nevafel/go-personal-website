@@ -86,7 +86,7 @@ func IndexPage() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 4, "\">nullmax17</span><br><span>and this is my </span><br><span style=\"font-size: 40px;\">personal</span> <span style=\"font-size: 40px;\">website</span></p></div>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 4, "\">nevafel</span><br><span>and this is my </span><br><span style=\"font-size: 40px;\">personal</span> <span style=\"font-size: 40px;\">website</span></p></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -240,7 +240,7 @@ func IndexPage() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 18, "\" style=\"font-family: Disket-Mono;\">My projects </h2><p>Vanilla minecraft launcher</p><p>Minecraft mods</p>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 18, "\" style=\"font-family: Disket-Mono;\">My projects </h2><p>Vanilla minecraft launcher</p><p>Minecraft mods</p><p>Minecraft plugins</p>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

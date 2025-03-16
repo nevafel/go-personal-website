@@ -1,12 +1,13 @@
-# Personal web
-This website is a showcase of my skills and interests.
+# Personal website
+Do you ever wanter a personal website on the internet? Here it is!
 
-## Can I use this website?
-Yes you can! But you must follow MIT license if you doing so. 
+Repo contains my website, but feel free to change anything.
+
+## Can I REALLY use this website?
+Yes you REALLY can! Change all templ files and use it as bare-bones for your own webpage! But you must follow MIT license if you doing so. 
 
 To start website you need to:
 - Create .env file and populate it with LOGIN, PASSWORD for admin panel.
-- Create blogs.db database and populate it with `initdb()` method.
 - run compiled binary with `./personal-website ""` to start HTTP website or `./personal-website domain.com subdomain.domain.com` to start HTTPS website
 
 ## How to contribute?
@@ -20,4 +21,5 @@ To start website you need to:
 
 ## ToDo
 - [x] Comments and code refactoring
-- [ ] Comments and likes for blog 
+- [ ] Projects showcase
+- [ ] Funny stuff, like site statistics, easter eggs..

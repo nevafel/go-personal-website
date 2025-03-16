@@ -23,7 +23,6 @@ css BlogFormInput() {
     border-radius: 4px;
     background-color: #f8f8f8;
     font-size: 13px;
-    resize: none;
 }
 
 css FileHeader() {
@@ -84,9 +83,12 @@ css PostScriptum() {
 }
 
 css DefaultTable() {
-    border-collapse: collapse;
+    border-collapse: separate;
     border: 1px solid;
     color: { textColor };
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
 }
 
 css CenterPageContainer() {
@@ -108,7 +110,7 @@ css CenterContainer() {
 
 css BlogHeading() {
     margin: 1%;
-    height: 35px;
+    height: 50px;
     position: relative;
 }
 

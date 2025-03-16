@@ -21,6 +21,7 @@ type Repository[T any] interface {
 	GetValueByID(id int) (T, error)
 	InsertValue(T) (id int, err error)
 	DeleteValueByID(id int) error
+	UpdateValue(id int, object T) error
 	ExecSpecific(SQL_command string) (sql.Result, error)
 	QuerySpecific(SQL_command string) (*sql.Rows, error)
 }

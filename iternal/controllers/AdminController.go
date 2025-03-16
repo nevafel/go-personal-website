@@ -5,7 +5,7 @@ It has some noodles in it but this is how it works.
 1. Users enters on "/admin" and this controller handles GetAdminLogin()
 2. Than frontend passes a form with login and password to PostAdminLogin()
 3. In PostAdminLogin() backend checks that login and password are equal to
-	ones that defined in .env file (without it code will panic! I will rewrite this)
+	ones that defined in .env file (without it code will show error page)
 4. If everything correct controller goes to GetAdminPanel() and shows admin-panel
 	template
 

@@ -18,17 +18,17 @@ templ postsTable(blogPosts []repositories.Post) {
     <table class={ styling.DefaultTable() }>
     <thead>
         <tr>
-        <th> ID </th>
-        <th> Header </th>
-        <th> Content </th>
+        <th class={ styling.DefaultTable() } > ID </th>
+        <th class={ styling.DefaultTable() } > Header </th>
+        <th class={ styling.DefaultTable() } > Content </th>
         </tr>
     </thead>
     <tbody>
     for _, post := range blogPosts {
     <tr>
-        <td><span> {strconv.Itoa(post.Id)} </span></td>
-        <td><span> {post.Header} </span></td>
-        <td><span> {post.Content} </span></td>
+        <td class={ styling.DefaultTable() } ><span> {strconv.Itoa(post.Id)} </span></td>
+        <td class={ styling.DefaultTable() } ><span> {post.Header} </span></td>
+        <td class={ styling.DefaultTable() } ><span> {post.Content} </span></td>
     </tr>
     }
     </tbody>
@@ -48,7 +48,18 @@ templ AdminPanelPage(blogPosts []repositories.Post) {
         <p>Content: <textarea class={ styling.BlogFormInput() } type="text" name="content" /> </p>
         <p><input type="submit" value="Submit" />  <input type="reset" value="Reset"></p>
     </form>
-    
+
+    <hr>
+
+    <h2 class={ styling.Header() }> Обновление постов </h2>
+
+    <form action="/post/update" method="post">
+        <p>ID: <input type="number" name="id" value="id"/></p>
+        <p>Header: <input type="text" name="header" /> </p>
+        <p>Content: <textarea class={ styling.BlogFormInput() } type="text" name="content" /> </p>
+        <p><input type="submit" value="Submit" />  <input type="reset" value="Reset"></p>
+    </form>
+
     <hr>
 
     <h2 class={ styling.Header() }> Удаление постов </h2>

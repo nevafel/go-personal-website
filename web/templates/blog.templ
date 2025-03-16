@@ -44,20 +44,20 @@ templ blogHeader() {
     <div class={ styling.BlogHeading() }>
         <div class={styling.BubbleContainer(), styling.BlogHeadingLeft()}>
             <p class={ styling.Header()} style="font-family: Disket-Mono;">
-                Блог нуля
+                Блог вафли
             </p>
         </div>
         <div></div>
         <div></div>
         <div class={styling.BubbleContainer(), styling.BlogHeadingRight()}>
-            <p class={ styling.Header() }> Вернуться <a href="/">Домой</a> </p>
+            <p class={ styling.Header() } style="font-family: Disket-Mono;"> Вернуться <a href="/">Домой</a> </p>
         </div>
     </div>
     
 
 }
 
-templ postBlockSeo(post repositories.Post) {
+templ postBodySeo(post repositories.Post) {
 
     <!DOCTYPE HTML>
     <html style="background-color: #272727; ">
@@ -88,12 +88,13 @@ templ postBlockSeo(post repositories.Post) {
 
         <title>{post.Header}</title>
     </head>
+    <body style="padding: 0; margin: 0; font-family:Codec-pro"></body>
     </html>
 
     
 }
 
-templ blogBlockSeo() {
+templ blogBodySeo() {
     <!DOCTYPE HTML>
     <html style="background-color: #272727; ">
     <head>
@@ -102,22 +103,23 @@ templ blogBlockSeo() {
         <link rel="icon" type="image/png" href="/static/icon.png" />
         @LoadFontsBlock()
 
-        <meta name="description" content="Блог nullmax17">
+        <meta name="description" content="Блог nevafel">
         <meta http-equiv="Content-Language" content="ru">
         <meta name="robots" content="index, follow">
 
-        <meta property="og:title" content="Персональный блог nullmax17">
+        <meta property="og:title" content="Персональный блог nevafel">
         <meta property="og:description" content="Блог какого-то программиста в котором он делится своими знаниями.">
         <meta property="og:url" content="https://dixxe.top/blog">
         <meta property="og:type" content="website">
 
-        <title>nullmax17's blog</title>
+        <title>nevafel's blog</title>
     </head>
+    <body style="padding: 0; margin: 0; font-family:Codec-pro"></body>
     </html>
 }
 
 templ ShowPost(post repositories.Post) {
-    @postBlockSeo(post)
+    @postBodySeo(post)
     @blogHeader()
 
     <div style="margin: 2%;">
@@ -137,7 +139,7 @@ templ ShowPost(post repositories.Post) {
 
 
 templ ShowBlogPage(posts []repositories.Post) {
-    @blogBlockSeo()
+    @blogBodySeo()
     @blogHeader()
 
     for i := len(posts) - 1; i>=0; i-- {

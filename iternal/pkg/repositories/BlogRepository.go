@@ -114,3 +114,8 @@ func (blogRepo blogRepository) QuerySpecific(SQL_command string) (*sql.Rows, err
 	}
 	return result, err
 }
+
+func (blogRepo blogRepository) UpdateValue(id int, object Post) error {
+	_, err := blogRepo.Database.Exec("UPDATE blogs SET header = ?, content = ? WHERE id = ?", object.Header, object.Content, id)
+	return err
+}

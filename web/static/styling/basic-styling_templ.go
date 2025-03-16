@@ -31,7 +31,6 @@ func BlogFormInput() templ.CSSClass {
 	templ_7745c5c3_CSSBuilder.WriteString(`border-radius:4px;`)
 	templ_7745c5c3_CSSBuilder.WriteString(`background-color:#f8f8f8;`)
 	templ_7745c5c3_CSSBuilder.WriteString(`font-size:13px;`)
-	templ_7745c5c3_CSSBuilder.WriteString(`resize:none;`)
 	templ_7745c5c3_CSSID := templ.CSSID(`BlogFormInput`, templ_7745c5c3_CSSBuilder.String())
 	return templ.ComponentCSSClass{
 		ID:    templ_7745c5c3_CSSID,
@@ -146,9 +145,12 @@ func PostScriptum() templ.CSSClass {
 
 func DefaultTable() templ.CSSClass {
 	templ_7745c5c3_CSSBuilder := templruntime.GetBuilder()
-	templ_7745c5c3_CSSBuilder.WriteString(`border-collapse:collapse;`)
+	templ_7745c5c3_CSSBuilder.WriteString(`border-collapse:separate;`)
 	templ_7745c5c3_CSSBuilder.WriteString(`border:1px solid;`)
 	templ_7745c5c3_CSSBuilder.WriteString(string(templ.SanitizeCSS(`color`, textColor)))
+	templ_7745c5c3_CSSBuilder.WriteString(`padding:5px;`)
+	templ_7745c5c3_CSSBuilder.WriteString(`margin:5px;`)
+	templ_7745c5c3_CSSBuilder.WriteString(`border-radius:10px;`)
 	templ_7745c5c3_CSSID := templ.CSSID(`DefaultTable`, templ_7745c5c3_CSSBuilder.String())
 	return templ.ComponentCSSClass{
 		ID:    templ_7745c5c3_CSSID,
@@ -188,7 +190,7 @@ func CenterContainer() templ.CSSClass {
 func BlogHeading() templ.CSSClass {
 	templ_7745c5c3_CSSBuilder := templruntime.GetBuilder()
 	templ_7745c5c3_CSSBuilder.WriteString(`margin:1%;`)
-	templ_7745c5c3_CSSBuilder.WriteString(`height:35px;`)
+	templ_7745c5c3_CSSBuilder.WriteString(`height:50px;`)
 	templ_7745c5c3_CSSBuilder.WriteString(`position:relative;`)
 	templ_7745c5c3_CSSID := templ.CSSID(`BlogHeading`, templ_7745c5c3_CSSBuilder.String())
 	return templ.ComponentCSSClass{

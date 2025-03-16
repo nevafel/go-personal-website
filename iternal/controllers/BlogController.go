@@ -25,6 +25,8 @@ func GetShowBlog(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		component := templates.ErrorPage(500, "Ошибка при обработке базы данных.")
 		// For some reason I can't set status code for request x-x
+		// null pointer exception?
+		//r.Response.StatusCode = 500
 		log.Println(err)
 		component.Render(context.Background(), w)
 		return
@@ -65,8 +67,8 @@ func PostCreatePost(w http.ResponseWriter, r *http.Request) {
 	header := r.FormValue("header") // To get value you need to specify name="header" in the form.
 	content := r.FormValue("content")
 
-	// Creating a new post with 0 Id, don't worry database handles id assignment
-	// itself. And in the InsertValue() method I don't use Post.Id value
+	// Creating a new post with 0 Id, don't worry database handles id assignment.
+	// And in the InsertValue() method I don't use Post.Id value
 	newPost := repositories.Post{Id: 0, Header: header, Content: content}
 
 	// Process database is async way. WARNING errors are NOT HANDLED
@@ -79,13 +81,30 @@ func PostCreatePost(w http.ResponseWriter, r *http.Request) {
 func PostDeletePost(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
 	id, err := strconv.Atoi(r.FormValue("id"))
-
 	if err != nil {
 		component := templates.ErrorPage(500, "Ошибка при переводе id (int) в string.")
-		r.Response.StatusCode = 500
 		log.Println(err)
 		component.Render(context.Background(), w)
 	}
+
 	// Process database is async way. WARNING errors are NOT HANDLED
 	go repositories.Blog.DeleteValueByID(id)
+}
+
+func PostUpdatePost(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()
+	id, err := strconv.Atoi(r.FormValue("id"))
+	if err != nil {
+		component := templates.ErrorPage(500, "Ошибка при переводе id (int) в string.")
+		log.Println(err)
+		component.Render(context.Background(), w)
+	}
+
+	newHeader := r.FormValue("header")
+	newContent := r.FormValue("content")
+
+	newPost := repositories.Post{Header: newHeader, Content: newContent}
+
+	// Process database is async way. WARNING ERRORS are NOT HANDLED
+	go repositories.Blog.UpdateValue(id, newPost)
 }
